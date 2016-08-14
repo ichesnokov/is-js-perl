@@ -72,12 +72,11 @@ JS
         <<'PERL',
 use v5.12;
 
-my $res;
-say substr("hello", 1)    =~ /^ello/    ? "true" : "false";
-say substr("hello", 0, 4) =~ /hell$/    ? "true" : "false";
-say index("hello", "ell")    >= 0       ? "true" : "false";
-say index("hello", "ell", 1) >= 0       ? "true" : "false";
-say index("hello", "ell", 2) >= 0       ? "true" : "false";
+say substr("hello", 1) =~ /^ello/ ? "true" : "false";
+say substr("hello", 0, 4) =~ /hell$/ ? "true" : "false";
+say index("hello", "ell") >= 0 ? "true" : "false";
+say index("hello", "ell", 1) >= 0 ? "true" : "false";
+say index("hello", "ell", 2) >= 0 ? "true" : "false";
 PERL
     ],
 );
