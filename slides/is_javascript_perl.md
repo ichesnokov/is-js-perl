@@ -618,7 +618,165 @@ Note:
 
 ---
 
+## Built-in methods
 
+
+---
+
+### Object Property Assignment
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+"use strict";
+
+let dst  = { quux: 0 }
+let src1 = { foo: 1, bar: 2 }
+let src2 = { foo: 3, baz: 4 }
+Object.assign(dst, src1, src2)
+console.log(dst);
+</code></pre>
+<pre>
+{ quux: 0, foo: 3, bar: 2, baz: 4 }
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use v5.12;
+use Data::Dump qw(pp);
+
+use v5.12;
+use Data::Dump qw(pp);
+
+my $dst  = { quux => 0 };
+my $src1 = { foo => 1, bar => 2 };
+my $src2 = { foo => 3, baz => 4 };
+$dst = { %$dst, %$src1, %$src2 };
+say pp($dst);
+</code></pre>
+<pre>
+{ bar => 2, baz => 4, foo => 3, quux => 0 }
+</pre>
+</div>
+
+Note:
+There is Hash::Merge / clone modules for more complex cases
+
+---
+
+### Array Element Finding
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+"use strict";
+
+let item = [1, 3, 4, 2].find(x => x > 3); // 4
+console.log(item);
+</code></pre>
+<pre>
+4
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use v5.12;
+use List::Util qw(first);
+
+my $item = first { $\_ > 3 } (1, 3, 4, 2);
+say $item;
+</code></pre>
+<pre>
+4
+</pre>
+</div>
+
+Note:
+
+
+---
+
+### String repeating
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+"use strict";
+
+console.log("foo".repeat(3));
+</code></pre>
+<pre>
+foofoofoo
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use v5.12;
+
+say "foo" x 3;
+</code></pre>
+<pre>
+foofoofoo
+</pre>
+</div>
+
+Note:
+
+
+---
+
+### String Searching
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+"use strict";
+
+let res;
+console.log( "hello".startsWith("ello", 1)  );
+console.log( "hello".endsWith("hell", 4)    );
+console.log( "hello".includes("ell")        );
+console.log( "hello".includes("ell", 1)     );
+console.log( "hello".includes("ell", 2)     );
+</code></pre>
+<pre>
+true
+true
+true
+true
+false
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use v5.12;
+
+say substr("hello", 1) =~ /^ello/ ? "true" : "false";
+say substr("hello", 0, 4) =~ /hell$/ ? "true" : "false";
+say index("hello", "ell") >= 0 ? "true" : "false";
+say index("hello", "ell", 1) >= 0 ? "true" : "false";
+say index("hello", "ell", 2) >= 0 ? "true" : "false";
+</code></pre>
+<pre>
+true
+true
+true
+true
+false
+</pre>
+</div>
+
+Note:
+
+---
 
 
 ---
