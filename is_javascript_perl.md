@@ -161,8 +161,7 @@ Undefined subroutine &main::hello called at 2_block_scoped_functions.pl line 11.
 
 <br/>
 <br/>
-<br/>
-<p style="text-align: right; font-size: x-large;">
+<p style="font-size: x-large;">
 Ilya Chesnokov &lt;<a href="mailto:chesnokov.ilya@gmail.com">chesnokov.ilya@gmail.com</a>&gt;<br/>
 for YAPC::EU 2016
 </p>
