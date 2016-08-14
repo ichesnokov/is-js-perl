@@ -778,6 +778,15 @@ Note:
 
 ---
 
+### Generators: generating number sequences
+
+---
+
+### Generators as coroutines
+
+---
+
+### Promises
 
 ---
 
