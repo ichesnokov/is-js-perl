@@ -1,2 +1,9 @@
 #!/bin/sh
-revealup serve is_javascript_perl.md --theme simple.css --transition slide
+revealup serve is_javascript_perl.md \
+    --template share/templates/slide.html.mt \
+    --theme simple.css \
+    --transition slide \
+    --width 1239 \
+    --height 700
+    #--width 1248 \
+    #--height 910 \
