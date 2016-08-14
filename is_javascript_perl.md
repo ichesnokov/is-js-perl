@@ -37,7 +37,7 @@ Note:
 And prove that people who say that no other languages borrow from Perl are liars!
 ---
 
-## Constants
+### Constants
 
 <div class="col-md-6">
 JavaScript
@@ -68,7 +68,7 @@ const my %hotness  => (
 
 ---
 
-## Block-scoped variables
+### Block-scoped variables
 
 <div class="col-md-6">
 JavaScript
@@ -105,7 +105,7 @@ x = 1
 
 ---
 
-## Block-scoped functions
+### Block-scoped functions
 
 <div class="col-md-6">
 JavaScript
