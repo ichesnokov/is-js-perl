@@ -29,7 +29,7 @@ for my $feature (@features) {
     print <<"SLIDE";
 ---
 
-## $title
+### $title
 
 <div class="col-md-6">
 JavaScript
@@ -50,7 +50,7 @@ SLIDE
 <pre><code class="perl">
 $perls[$i]
 </code></pre>
-<pre class="fragment" data-fragment-index="@{[ $i + 2 ]}">
+<pre>
 $perl_results[$i]
 </pre>
 PERL_RESULT
