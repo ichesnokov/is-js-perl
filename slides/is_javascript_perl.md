@@ -735,7 +735,6 @@ JavaScript
 <pre><code class="javascript">
 "use strict";
 
-let res;
 console.log( "hello".startsWith("ello", 1)  );
 console.log( "hello".endsWith("hell", 4)    );
 console.log( "hello".includes("ell")        );
