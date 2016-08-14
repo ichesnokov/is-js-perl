@@ -36,12 +36,12 @@ JavaScript
 <pre><code class="javascript">
 $js
 </code></pre>
-<pre class="fragment" data-fragment-index="1">
+<pre>
 $js_result
 </pre>
 </div>
 
-<div class="col-md-6 fragment" data-fragment-index="2">
+<div class="col-md-6 fragment" data-fragment-index="1">
 Perl
 SLIDE
 
@@ -50,7 +50,7 @@ SLIDE
 <pre><code class="perl">
 $perls[$i]
 </code></pre>
-<pre class="fragment" data-fragment-index="@{[ $i + 3 ]}">
+<pre class="fragment" data-fragment-index="@{[ $i + 2 ]}">
 $perl_results[$i]
 </pre>
 PERL_RESULT
