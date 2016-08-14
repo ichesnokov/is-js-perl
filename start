@@ -1,0 +1,2 @@
+#!/bin/sh
+revealup serve is_javascript_perl.md --theme simple.css --transition slide
