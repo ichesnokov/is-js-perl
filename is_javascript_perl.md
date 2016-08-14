@@ -81,12 +81,12 @@ let x = 1;
 }
 console.log(x);
 </code></pre>
-<pre class="fragment" data-fragment-index="3">
+<pre>
 x = 1
 </pre>
 </div>
 
-<div class="col-md-6 fragment" data-fragment-index="1">
+<div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
 use v5.12;
@@ -98,7 +98,7 @@ my $x = 1;
 }
 say "x = $x";
 </code></pre>
-<pre class="fragment" data-fragment-index="4">
+<pre>
 x = 1
 </pre>
 </div>
@@ -120,9 +120,9 @@ JavaScript
 }
 hello();
 </code></pre>
-<pre class="fragment" data-fragment-index="1">
+<pre>
 Hi, world!
-/Users/ichesnokov/yapceu2016/is-js-perl/2_block_scoped_functions.js:9
+2_block_scoped_functions.js:9
 hello();
 ^
 
@@ -145,7 +145,7 @@ use experimental 'lexical_subs';
 }
 hello();
 </code></pre>
-<pre class="fragment" data-fragment-index="3">
+<pre>
 Hi, world!
 Undefined subroutine &main::hello called at 2_block_scoped_functions.pl line 11.
 </pre>
