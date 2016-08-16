@@ -3,7 +3,7 @@ revealup serve is_javascript_perl.md \
     --template share/templates/slide.html.mt \
     --theme simple.css \
     --transition slide \
-    --width 1239 \
-    --height 700
+    --width 1280 \
+    --height 960
     #--width 1248 \
     #--height 910 \
