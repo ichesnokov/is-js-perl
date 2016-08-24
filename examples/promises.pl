@@ -11,27 +11,19 @@ sub msgAfterTimeout {
     my ($msg, $who, $timeout_ms) = @_;
 
     my $deferred = deferred;
-
     $cv->begin;
     push @timers, AE::timer $timeout_ms / 1000, 0, sub {
         $deferred->resolve("$msg Hello $who!");
         $cv->end;
     };
-
     $deferred->promise;
 }
 
-msgAfterTimeout("", "Foo", 500)->then(
-    sub {
-        my $msg = shift;
-        msgAfterTimeout($msg, 'Bar', 1000);
-    },
-    sub { say "Failed!"; $cv->send; },
-)->then(
-    sub {
-        my $msg = shift;
-        say "Done after 1500ms:$msg";
-    },
-    sub { say "Failed again"; $cv->send; },
-);
+msgAfterTimeout("", "Foo", 500)->then(sub {
+    my $msg = shift;
+    msgAfterTimeout($msg, 'Bar', 1000);
+})->then(sub {
+    my $msg = shift;
+    say "Done after 1500ms:$msg";
+});
 $cv->recv;
