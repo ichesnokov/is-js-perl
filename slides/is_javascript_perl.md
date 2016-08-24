@@ -818,7 +818,59 @@ and / or index() / substr().
 
 ---
 
-### Generators: generating number sequences
+### Generators: generating sequences
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+let fibonacci = {
+    \*\[Symbol.iterator\]() {
+        let pre = 0, cur = 1
+        for (;;) {
+            [ pre, cur ] = [ cur, pre + cur ]
+            yield cur
+        }
+    }
+}
+let numbers = [];
+for (let n of fibonacci) {
+    if (n > 1000)
+        break
+    numbers.push(n);
+}
+console.log(numbers);
+</code></pre>
+<pre>
+[ 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987 ]
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use FAST::List::Gen;
+
+my $fib = do {
+    my ($pre, $cur) = (0, 1);
+    iterate {
+        ($pre, $cur) = ($cur, $pre + $cur);
+        return $cur;
+    }
+};
+my @numbers;
+for my $n (@$fib) {
+    last if $n > 1000;
+    push @numbers, $n;
+}
+say "@numbers";
+</code></pre>
+<pre>
+1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+</pre>
+</div>
+
+Note:
+In Perl: CPAN
 
 ---
 
