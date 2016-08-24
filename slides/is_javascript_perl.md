@@ -36,10 +36,11 @@ or maybe for developers in other scripting languages as well.
 ## Let's have an overview.
 
 Note:
-And prove that people who say that no other languages borrow from Perl are liars!
 I'll show you examples in Javascript, tell how JS guys call that and show the
 appropriate examples in Perl.
 Let's start.
+Hope we'll be able to prove that people who say that no other languages borrow from Perl are liars!
+
 ---
 
 ### Constants
@@ -456,7 +457,9 @@ c3
 </div>
 
 Note:
-
+\G matches at the start of a previous search<br/>
+/g  Match globally, i.e., find all occurrences.<br/>
+/c  Do not reset search position on a failed match when /g is in effect.<br/>
 
 ---
 
@@ -497,7 +500,7 @@ Note:
 
 ---
 
-### Destructuring assignments: object matching, shorthand notation
+### Destructuring assignments: Object matching, shorthand notation
 
 <div class="col-md-6">
 JavaScript
