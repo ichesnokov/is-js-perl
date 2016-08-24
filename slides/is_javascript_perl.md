@@ -29,12 +29,17 @@ ECMAscript is managed by ECMAScript technical committee (TC39).
 ## Some of these changes look very familiar...
 ## ...for a Perl developer ;) <!-- .element: class="fragment" data-fragment-index="1" -->
 
+Note:
+or maybe for developers in other scripting languages as well.
 ---
 
 ## Let's have an overview.
 
 Note:
 And prove that people who say that no other languages borrow from Perl are liars!
+I'll show you examples in Javascript, tell how JS guys call that and show the
+appropriate examples in Perl.
+Let's start.
 ---
 
 ### Constants
@@ -66,6 +71,8 @@ const my %hotness  => (
 </code></pre>
 </div>
 
+Note:
+In Perl: for ages (core)
 ---
 
 ### Block-scoped variables
@@ -103,6 +110,9 @@ x = 1
 </pre>
 </div>
 
+Note:
+In Perl: for ages (core)<br/>
+And it's required in 'strict' mode.
 ---
 
 ### Block-scoped functions
