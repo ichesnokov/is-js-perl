@@ -709,7 +709,10 @@ say pp($dst);
 </div>
 
 Note:
-There is Hash::Merge / clone modules for more complex cases
+Such a complex name in JS. In Perl it would be something like "Hash
+assignment".<br/>
+There is Hash::Merge / clone modules for more complex cases<br/>
+In Perl: core
 
 ---
 
@@ -740,11 +743,11 @@ say $item;
 </div>
 
 Note:
-
+In Perl: core
 
 ---
 
-### String repeating
+### String repeating (oh, really?!?! WTF :)
 
 <div class="col-md-6">
 JavaScript
@@ -767,7 +770,7 @@ foofoofoo
 </div>
 
 Note:
-
+In Perl: core
 
 ---
 
@@ -810,6 +813,8 @@ false
 </div>
 
 Note:
+There are some shorthand operators, which we can imitate in Perl using regexes
+and / or index() / substr().
 
 ---
 
