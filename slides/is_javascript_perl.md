@@ -154,6 +154,8 @@ Undefined subroutine &main::hello called at 2_block_scoped_functions.pl line 11.
 </pre>
 </div>
 
+Note:
+In Perl: recently (still experimental).
 ---
 
 ### Arrow functions
@@ -373,6 +375,7 @@ Note:
 
 ### Better Unicode support, including regexes
 
+<!--
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
@@ -406,8 +409,15 @@ Length of matched part: 1
 </pre>
 </div>
 
-Note:
+-->
 
+### (no examples: my browser/OS doesn't support Unicode properly) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+
+Note:
+But Perl does have. Perl had a good Unicode 6.0 support since version 5.14.0.
+5.24.0 supports Unicode 8.0 (released June 2015).<br/>
+Unicode seems to have a yearly version schedule as well.
 
 ---
 
