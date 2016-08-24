@@ -818,7 +818,11 @@ and / or index() / substr().
 
 ---
 
-### Generators: generating sequences
+## More advanced stuff
+
+---
+
+### Iterators and Generators: generating sequences
 
 <div class="col-md-6">
 JavaScript
@@ -926,18 +930,19 @@ Coro::AnyEvent::idle;
 </div>
 
 Note:
-In Perl: CPAN (<= v5.20)
-JS:
-* can return values with yield()<br/>
-* built into a core<br/>
-* requires manual fiddling and control over how generators are being called<br/>
- * but there are probably libraries for making it easier<br/>
+In Perl: CPAN (<= v5.20)<br/>
 
-Perl: <br/>
-* doesn't return values with cede()<br/>
-* isn't very well supported (that's a pity)<br/>
- * but i can't blame only the author<br/>
-* control flow requires some learning / understanding, but eventually requires less code to work.<br/>
+---
+
+### Generators: coroutines
+
+| JavaScript | Perl |
+|---|---|
+|Allows to pass / return values with yield()|Doesn't allow to pass / values with cede() |
+|Built into a core|Not in Perl core (unfortunately) |
+|Requires manual fiddling and control of the flow (libraries that make this job easier possibly exist)|Control flow requires some learning / understanding, but eventually requires writing fewer lines of code|
+
+Note:
 
 ---
 
