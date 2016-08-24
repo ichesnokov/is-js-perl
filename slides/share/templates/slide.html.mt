@@ -46,6 +46,7 @@
         progress: true,
         history: true,
         center: true,
+        slideNumber: "c/t",
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || '<?= $transition ?>', // default/cube/page/concave/zoom/linear/fade/none
         // Optional libraries used to extend on reveal.js
