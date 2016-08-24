@@ -80,8 +80,6 @@ In Perl: for ages (core)
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-'use strict';
-
 let x = 1;
 {
     let x = 5;
@@ -96,9 +94,6 @@ x = 1
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my $x = 1;
 {
     my $x = 5;
@@ -120,8 +115,6 @@ And it's required in 'strict' mode.
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-'use strict';
-
 {
     function hello() {
         console.log('Hi, world!');
@@ -168,8 +161,6 @@ Undefined subroutine &main::hello called at 2_block_scoped_functions.pl line 11.
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-'use strict';
-
 let evens = [2, 4, 6];
 let odds  = evens.map(v => v + 1);
 console.log(odds);
@@ -182,9 +173,6 @@ console.log(odds);
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my @evens = (2, 4, 6);
 my @odds  = map { $_ + 1 } @evens;
 say "@odds";
@@ -207,8 +195,6 @@ functions.
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 function add (x, y = 7, z = 42) {
     return x + y + z;
 }
@@ -247,8 +233,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 function f (x, y, ...a) {
     return (x + y) * a.length
 }
@@ -262,9 +246,6 @@ console.log(f(1, 2, "hello", true, 7));
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 sub f {
     my ($x, $y, @args) = @_;
 
@@ -287,8 +268,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 var params = [ "hello", true, 7 ];
 var other = [ 1, 2, ...params ];
 console.log(other);
@@ -301,9 +280,6 @@ console.log(other);
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my @params = qw(hello true 7);
 my @other = (1, 2, @params);
 say "@other";
@@ -323,8 +299,6 @@ Spread operator can also be used to split strings to chars. We have a split() fu
 <div>
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let customer = { name: "Foo" };
 let card = { amount: 7, product: "Bar", unitprice: 42 };
 let message = \`Hello ${customer.name},
@@ -345,9 +319,6 @@ a total of 294 bucks?
 <div>
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my $customer = { name => "Foo" };
 my $card = { amount => 7, product => "Bar", unitprice => 42 };
 my $message = <<"MESSAGE";
@@ -374,8 +345,6 @@ Also introduces a "babycart" operator (see perldoc perlsecret)
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let binary = 0b1000;
 let octal  = 0o10;
 console.log(binary, octal);
@@ -388,9 +357,6 @@ console.log(binary, octal);
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my $binary = 0b1000;
 my $octal  = 010;
 say "$binary $octal";
@@ -410,8 +376,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 console.log("Length of 𠮷: "
     + "𠮷".length);
 console.log(
@@ -452,8 +416,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let str = "a1b2c3";
 let re = /[a-z]\d+/y;
 let matched;
@@ -471,9 +433,6 @@ c3
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-use warnings;
-
 my $str = "a1b2c3";
 while ($str =~ /\G([a-z]\d+)/gc) {
     say $1;
@@ -496,8 +455,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 var list = [1, 2, 3];
 var [a, , b] = list;
 console.log(a, b);
@@ -513,8 +470,6 @@ console.log(a, b);
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use v5.12;
-
 my @list = (1, 2, 3);
 my ($a, undef, $b) = @list;
 say "$a $b";
@@ -537,8 +492,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 var obj = { x: 1, y: 5, z: 500 };
 var { x, y, z } = obj;
 console.log(x, y, z);
@@ -571,8 +524,6 @@ Note:
 <div>
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let isMarked     = new WeakSet()
 class Node {
     constructor (id)   { this.id = id                  }
@@ -599,7 +550,6 @@ isMarked.has(foo): false
 <div>
 Perl
 <pre><code class="perl">
-use v5.12;
 use Scalar::Util qw(weaken);
 use Data::Dump qw(pp);
 
@@ -638,8 +588,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let dst  = { quux: 0 }
 let src1 = { foo: 1, bar: 2 }
 let src2 = { foo: 3, baz: 4 }
@@ -654,7 +602,6 @@ console.log(dst);
 <div class="col-md-6 fragment" data-fragment-index="1">
 Perl
 <pre><code class="perl">
-use v5.12;
 use Data::Dump qw(pp);
 
 my $dst  = { quux => 0 };
@@ -678,8 +625,6 @@ There is Hash::Merge / clone modules for more complex cases
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 let item = [1, 3, 4, 2].find(x => x > 3); // 4
 console.log(item);
 </code></pre>
@@ -691,7 +636,6 @@ console.log(item);
 <div class="col-md-6 fragment" data-fragment-index="1">
 Perl
 <pre><code class="perl">
-use v5.12;
 use List::Util qw(first);
 
 my $item = first { $\_ > 3 } (1, 3, 4, 2);
@@ -712,8 +656,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 console.log("foo".repeat(3));
 </code></pre>
 <pre>
@@ -724,8 +666,6 @@ foofoofoo
 <div class="col-md-6 fragment" data-fragment-index="1">
 Perl
 <pre><code class="perl">
-use v5.12;
-
 say "foo" x 3;
 </code></pre>
 <pre>
@@ -743,8 +683,6 @@ Note:
 <div class="col-md-6">
 JavaScript
 <pre><code class="javascript">
-"use strict";
-
 console.log( "hello".startsWith("ello", 1)  );
 console.log( "hello".endsWith("hell", 4)    );
 console.log( "hello".includes("ell")        );
@@ -763,8 +701,6 @@ false
 <div class="col-md-6 fragment" data-fragment-index="1">
 Perl
 <pre><code class="perl">
-use v5.12;
-
 say substr("hello", 1) =~ /^ello/ ? "true" : "false";
 say substr("hello", 0, 4) =~ /hell$/ ? "true" : "false";
 say index("hello", "ell") >= 0 ? "true" : "false";
