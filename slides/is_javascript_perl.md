@@ -530,10 +530,91 @@ Note:
 
 ---
 
-### Weak-Link Data structures
+### Set data structure
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+let s = new Set();
+s.add("hello");
+s.add("bye");
+s.add("hello");
+console.log(s.size);
+</code></pre>
+<pre>
+2
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="2">
+Perl
+<pre><code class="perl">
+use Set::Object;
+
+my $s = Set::Object->new;
+$s->insert("hello");
+$s->insert("bye");
+$s->insert("hello");
+say $s->size;
+</code></pre>
+<pre>
+2
+</pre>
+</div>
+
+Note:
+JavaScript has Map and Set data structures now. Map is similar to a hash
+(object in JS), Set is similar to array with unique keys. The difference
+between Map and object / hash is that you can use objects as keys. In Perl we
+can do similar thing using Scalar::Util::refaddr()
+
+In Perl: CPAN
+
+---
+
+### Map data structure
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+let m = new Map()
+let s = {x:10};
+m.set("hello", 42)
+m.set(s, "object")
+console.log(m);
+</code></pre>
+<pre>
+Map { 'hello' => 42, { x: 10 } => 'object' }
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="2">
+Perl
+<pre><code class="perl">
+use Scalar::Util qw(refaddr);
+use Data::Dump qw(pp);
+
+my $m = { hello => 42 };
+my $s = { x => 10 };
+$m->{refaddr($s)} = 'object';
+say pp($m);
+</code></pre>
+<pre>
+{ 30131080 => "object", hello => 42 }
+</pre>
+</div>
+
+Note:
+It's a bit more complicated in Perl: you need to do some manual fuckery to
+translate object to a refaddr or refaddr to an actual object, but I'm pretty
+sure that there is something for that on CPAN.<br/>
+In Perl: Manual fuckery (can be on CPAN)
+
+---
+
+### Weak-Link Data structures: JavaScript
 
 <div>
-JavaScript
 <pre><code class="javascript">
 let isMarked     = new WeakSet()
 class Node {
@@ -554,12 +635,13 @@ isMarked.has(foo): false
 </pre>
 </div>
 
+Note:
+
 ---
 
-### Weak-Link Data structures
+### Weak-Link Data structures (?): Perl
 
 <div>
-Perl
 <pre><code class="perl">
 use Scalar::Util qw(weaken);
 use Data::Dump qw(pp);
