@@ -946,7 +946,71 @@ Note:
 
 ---
 
-### Promises
+### Promises: JavaScript
+
+<div>
+<pre><code class="javascript">
+function msgAfterTimeout(msg, who, timeout) {
+    return new Promise(
+        (resolve, reject) => {
+            setTimeout(() => resolve(\`${msg} Hello ${who}!\`), timeout)
+        }
+    )
+}
+msgAfterTimeout("", "Foo", 500).then(
+    (msg) =>
+        msgAfterTimeout(msg, "Bar", 1000)
+).then(
+    (msg) => {
+        console.log(\`Done after 1500ms:${msg}\`)
+    }
+)
+</code></pre>
+<pre>
+Done after 1500ms: Hello Foo! Hello Bar!
+</pre>
+</div>
+
+---
+
+### Promises: Perl
+
+<div>
+<pre><code class="perl" style="max-height:700px;">
+use Promises qw(deferred);
+use AE;
+
+my @timers;
+my $cv = AE::cv;
+
+sub msgAfterTimeout {
+    my ($msg, $who, $timeout\_ms) = @\_;
+
+    my $deferred = deferred;
+    $cv->begin;
+    push @timers, AE::timer $timeout\_ms / 1000, 0, sub {
+        $deferred->resolve("$msg Hello $who!");
+        $cv->end;
+    };
+    $deferred->promise;
+}
+
+msgAfterTimeout("", "Foo", 500)->then(sub {
+    my $msg = shift;
+    msgAfterTimeout($msg, 'Bar', 1000);
+})->then(sub {
+    my $msg = shift;
+    say "Done after 1500ms:$msg";
+});
+$cv->recv;
+</code></pre>
+<pre>
+Done after 1500ms: Hello Foo! Hello Bar!
+</pre>
+</div>
+
+Note:
+In Perl: CPAN
 
 ---
 
