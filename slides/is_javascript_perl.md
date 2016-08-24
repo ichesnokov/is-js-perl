@@ -830,6 +830,13 @@ and / or index() / substr().
 
 ---
 
+## Is Javascript Perl?
+## No.              <!-- .element: class="fragment" data-fragment-index="1" -->
+## But it's close!  <!-- .element: class="fragment" data-fragment-index="2" -->
+### ...and better now than before ;)  <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
 # Questions?
 ## Notes?
 ### Criticism?
