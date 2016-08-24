@@ -30,7 +30,7 @@ ECMAscript is managed by ECMAScript technical committee (TC39).
 ## ...for a Perl developer ;) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 Note:
-or maybe for developers in other scripting languages as well.
+and for developers of other scripting languages.
 ---
 
 ## Let's have an overview.
