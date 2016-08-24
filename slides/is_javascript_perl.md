@@ -874,7 +874,70 @@ In Perl: CPAN
 
 ---
 
-### Generators as coroutines
+### Generators: coroutines
+
+<div class="col-md-6">
+JavaScript
+<pre><code class="javascript">
+function\* task() {
+  let counter = 1;
+  yield counter++;
+  yield counter++;
+  yield counter++;
+}
+
+var iterator = task();
+
+let res = iterator.next();
+while (!res.done) {
+    console.log(res.value);
+    res = iterator.next();
+}
+</code></pre>
+<pre>
+1
+2
+3
+</pre>
+</div>
+
+<div class="col-md-6 fragment" data-fragment-index="1">
+Perl
+<pre><code class="perl">
+use Coro;
+use Coro::AnyEvent;
+
+async {
+    my $counter = 1;
+    say $counter++;
+    cede();
+    say $counter++;
+    cede();
+    say $counter++;
+    cede();
+};
+Coro::AnyEvent::idle;
+</code></pre>
+<pre>
+1
+2
+3
+</pre>
+</div>
+
+Note:
+In Perl: CPAN (<= v5.20)
+JS:
+* can return values with yield()<br/>
+* built into a core<br/>
+* requires manual fiddling and control over how generators are being called<br/>
+ * but there are probably libraries for making it easier<br/>
+
+Perl: <br/>
+* doesn't return values with cede()<br/>
+* isn't very well supported (that's a pity)<br/>
+ * but i can't blame only the author<br/>
+* control flow requires some learning / understanding, but eventually requires less code to work.<br/>
 
 ---
 
