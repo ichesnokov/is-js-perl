@@ -74,6 +74,7 @@ const my %hotness  => (
 
 Note:
 In Perl: for ages (core)
+
 ---
 
 ### Block-scoped variables
@@ -623,7 +624,7 @@ class Node {
     unmark      ()     { isMarked.delete(this)         }
 }
 let foo = new Node("foo")
-foo.mark() // add to isMarked set 
+foo.mark() // add to isMarked set
 console.log(\`isMarked.has(foo): ${isMarked.has(foo)}\`);
 foo = null  // remove only reference to foo
 console.log(\`isMarked.has(foo): ${isMarked.has(foo)}\`);
@@ -672,7 +673,6 @@ Note:
 ---
 
 ## Built-in methods
-
 
 ---
 
