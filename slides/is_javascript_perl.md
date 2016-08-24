@@ -517,8 +517,6 @@ console.log(x, y, z);
 <div class="col-md-6 fragment" data-fragment-index="2">
 Perl
 <pre><code class="perl">
-use feature qw(say);
-
 my %obj = (x => 1, y => 5, z => 500);
 map { $$\_ = $obj{$\_} } keys %obj;
 say "$x $y $z";
