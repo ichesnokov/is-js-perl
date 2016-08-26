@@ -1,0 +1,9 @@
+requires 'AE';
+requires 'Coro'; # only works on perl 5.20 and below (or stableperl)
+requires 'Data::Dump';
+requires 'FAST::List::Gen';
+requires 'List::Util';
+requires 'Promises';
+requires 'Scalar::Util';
+requires 'Set::Object';
+requires 'uni::perl';
