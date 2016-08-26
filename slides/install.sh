@@ -1,3 +1,10 @@
+if `which git cpanm > /dev/null` ; then
+    echo "Installing App::revelaup"
+else
+    echo "You need git and cpanm configured, exiting now"
+    exit 1;
+fi
+
 # Install old version from cpan along with deps
 cpanm App::revealup
 
